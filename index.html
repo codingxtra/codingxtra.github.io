@@ -31,16 +31,18 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 
 
 // Initialize Realtime Database and get a reference to the service
-const database = getDatabase(app);
+const db = getDatabase(app);
+     const starCountRef = ref(db);
+    dbs=get(starCountRef);
 
-     console.log(database)
+     console.log(dbs)
    
 </script>
     <h1>Hello, world!</h1>
