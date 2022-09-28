@@ -14,7 +14,7 @@
 
 <body>
   <nav id="navigation">
-    <ul class="nav  justify-content-end bg-dark bg-gradient p-2">
+    <ul class="nav  justify-content-end bg-dark bg-gradient p-2 position-fixed" style="width: 100vw;">
       <li class="nav-item d-block d-md-none">
         <button onclick="mytogglemenu()" style="background:None; border: None;"><i id="hamburger_icon"
             class="fa fa-bars" style="font-size:2rem;color:white; margin-right: 1rem;"></i></button>
@@ -31,13 +31,15 @@
 
     </ul>
   </nav>
-  <h1>Hello, world!</h1>
+  <container style="position:absolute; top:4rem; z-index: -1;">
+    <h1>Hello, world!</h1>
+  </container>
   <script>
     function mytogglemenu() {
       let menulist = document.createElement("div");
       menulist.id = "mobilemenu"
-      menulist.innerHTML = `<nav id="mobile_navigation"> 
-      <ul class="nav flex-column justify-content-end bg-dark bg-gradient p-2">
+      menulist.innerHTML = `<nav id="mobile_navigation" style="color:yellow; height:100%"> 
+      <ul class="nav flex-column justify-content-end bg-dark bg-gradient p-2 " style="position:fixed;top:3.15rem;opacity:95%; width:100vw">
         <li class="nav-item">
             <a class="nav-link text-white active bg-danger" aria-current="page"  href="#">Home</a>
         </li>
@@ -46,9 +48,9 @@
         </li>
         <li class="nav-item">
             <a class="nav-link text-white" href="#">About us!</a>
-        </li>          
+        </li> 
         </ul>
-       </nav>`
+        </nav>`
       let navbar = document.getElementById("navigation");
       let check = document.getElementById("hamburger_icon").classList.contains("fa-bars");
       if (check) {
