@@ -10,7 +10,7 @@ container{
 }
 .welcome_banner::before{
     content: '';
-    height: 40vh;
+    height: 80vh;
     width: 100vw;
     background-image: url("utilities/images/bg.jpg");
     position:absolute;
