@@ -13,7 +13,7 @@
 
 </head>
 
-<body>
+<body onload="fetchpost()">
   <nav id="navigation" style="display: flex;" class="bg-dark bg-gradient p-2 position-fixed">
     <div style="width: 50vw;">
       <img src="utilities\images\cx_logo.png" alt="cx_logo" width="180" height="40">
@@ -37,11 +37,10 @@
     </div>
     <div style="width: 10vw;"></div>
   </nav>
-  <container>
+  <container >
  
-  <section class="post_list">
-    <a href="post_read.html#test"> Test Post</a>
-
+  <section class="post_area">
+<p id="post_content"></p>
   </section>
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="background-color:rgba(223, 211, 205, 0.664); width: 100vw;">
@@ -81,6 +80,15 @@
         document.getElementById("mobilemenu").remove()
       }
     }
+   
+    function fetchpost(){
+        let hash_value= window.location.hash
+        let path="post/json/"+hash_value.slice(1)+".json";
+        fetch(path).then((response) => response.json())
+    .then((json) => {document.getElementById("post_content").innerHTML=json.article});
+        
+    }
+       
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"

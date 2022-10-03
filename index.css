@@ -28,3 +28,14 @@ container{
     padding: 1rem;
     background-color: aliceblue;
 }
+
+.proglogo{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.proglogo > img{
+    margin: 1rem;
+    opacity: 80%;
+}
