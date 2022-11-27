@@ -85,7 +85,9 @@
         let hash_value= window.location.hash
         let path="post/json/"+hash_value.slice(1)+".json";
         fetch(path).then((response) => response.json())
-    .then((json) => {document.getElementById("post_content").innerHTML=json.article});
+    .then((json) => {
+      console.log(json.article)
+      document.getElementById("post_content").innerHTML=json.article});
         
     }
        
